@@ -1,0 +1,15 @@
+.env
+todo.md
+__pycache__/
+grading_run.log
+
+# Re-creatable with scripts/hydrate_lfs.py + scripts/prepare_task.py
+benchmarks/
+tasks/*/paper/
+
+# Per-run bulk: the agent's own git repo (plus downloaded datasets) and Claude Code's session files
+runs/**/submission/
+runs/**/claude_home/
+
+grading/work/
+grading/results/**/*.log
