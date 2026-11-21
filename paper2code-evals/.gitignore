@@ -13,3 +13,4 @@ runs/**/claude_home/
 
 grading/work/
 grading/results/**/*.log
+grading/results/**/*_messages.jsonl

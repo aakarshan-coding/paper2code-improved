@@ -1,0 +1,1 @@
+{"run_id": "20261121T023022Z-833477", "paper": "bam", "setup": "baseline", "variant": "code_dev", "judge": "simple", "judge_model": "gpt-5-mini-2025-08-07", "score": 0.8280092592592593, "graded_at": "2026-11-21T06-10-41-GMT", "leaf_nodes": 255, "invalid_leaf_nodes": 0, "grader_output": "grading/results/bam/baseline/20261121T023022Z-833477/code_dev/grader_output.json"}
