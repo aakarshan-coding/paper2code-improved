@@ -1,0 +1,1 @@
+Create /home/submission/hello.py that prints 'ok', run it, and commit it in a new git repo at /home/submission. Then check whether /home/paper/rubric.json exists and say so in one line.

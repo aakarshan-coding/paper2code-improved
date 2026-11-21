@@ -1,0 +1,15 @@
+{"type":"sandbox_check","check":"not_root","ok":true,"detail":"uid=1000"}
+{"type":"sandbox_check","check":"no_sudo","ok":true,"detail":""}
+{"type":"sandbox_check","check":"paper_visible","ok":true,"detail":"addendum.md assets blacklist.txt paper.md paper.pdf "}
+{"type":"sandbox_check","check":"paper_readonly","ok":true,"detail":""}
+{"type":"sandbox_check","check":"submission_writable","ok":true,"detail":""}
+{"type":"sandbox_check","check":"no_grading_files","ok":true,"detail":""}
+{"type":"sandbox_check","check":"only_expected_mounts","ok":true,"detail":"/home/agent/.claude /home/paper /home/submission "}
+{"type":"sandbox_check","check":"no_host_drive","ok":true,"detail":""}
+{"type":"sandbox_check","check":"no_extra_secrets","ok":true,"detail":""}
+{"type":"sandbox_check","check":"pip_install","ok":true,"detail":""}
+{"type":"sandbox_check","check":"normal_clone_works","ok":true,"detail":""}
+{"type":"sandbox_check","check":"blacklisted_clone_blocked","ok":true,"detail":"https://github.com/modichirag/GSM-VI"}
+{"type":"sandbox_check","check":"claude_version","ok":true,"detail":"2.1.322 (Claude Code)"}
+{"type":"sandbox_check","check":"docker_socket_absent","ok":true,"detail":""}
+{"type":"sandbox_check","check":"waiting_for_timeout","ok":true,"detail":""}
