@@ -1,0 +1,28 @@
+{
+  "paper": "bam",
+  "source": "benchmarks\\frontier-evals\\project\\paperbench\\data\\papers\\bam",
+  "files": {
+    "addendum.md": "1def9d4607901e6f7b972e32507579ff1946a421bc3ce6b27aad87edb85eb63e",
+    "assets/asset_1.jpg": "9a7eb2e1eb597e3cecd6bb975cd3dd0fa0f1820222ef4952741181b880f1dabb",
+    "assets/asset_10.jpg": "8198b0008e1d90e7afb23df5eb628b75447558d52ea28d23e7e48299c631f102",
+    "assets/asset_11.jpg": "e37938441bbdb9026e341932a218f601344c842ed4118d894e4eec4591f1f52a",
+    "assets/asset_12.jpg": "6bfae24c4524689304ae1652d0113d47da0e368c3791e671033df1267596333c",
+    "assets/asset_13.jpg": "8ed01db7c5b9d1382690a08ea8b528df57a5efabfb601e11887ee75418d46966",
+    "assets/asset_14.jpg": "44e3c606bae09e72311840f570b0cff4d6467b7c9a86eaf357f0afeb901979bf",
+    "assets/asset_15.jpg": "99e355c982c2e7e70bdeddf5680de6c89456d9db2e72bda38b3a58f01eb72b64",
+    "assets/asset_2.jpg": "2fa9a5c7e902dd8c0a20e8c7a0111a2ac6707281cbccf5609234e266f27ae1b4",
+    "assets/asset_3.jpg": "0de5f4088c3d3d7bf78fe4372368236145c0ea22d43e6ebd89d216ed9963f501",
+    "assets/asset_4.jpg": "41d98be8260e55494d58d6540afac98f48112b0398157de4cba872167c4ab25e",
+    "assets/asset_5.jpg": "ddf5ec7caded40fd9c571c06314406888449d2a10a7f54c24be17d44a58ccb35",
+    "assets/asset_6.jpg": "a564801b649450e1839a7aa8b6b27a8a1837e41af496c8e78f5c152699f984e2",
+    "assets/asset_7.jpg": "6f104d7472eee300475e387bafedccfa03ae424ff8174eeb67b2f3e3f22ac57f",
+    "assets/asset_8.jpg": "076b94ea83a4e9f51711bf31a5e77fd66d64d43f09a3b3891c475fb5d29a8b6c",
+    "assets/asset_9.jpg": "36b34fb716452d45338af8b3115a3f1569f26e5e6c8d4ad73f8acbf3c02bbdee",
+    "blacklist.txt": "cdebc745a88dd8a4648bf75aba265d288e4f05bafcc8ad0a9572585178ec3692",
+    "paper.md": "96cc2c131d6c1c57834255bb933d095f33cba8334efbc47bda5af5c6fd53f3b6",
+    "paper.pdf": "86018f2f5f5f319aa0b2f82706c430c525e0b2d017b9724e0f53d9c39f21ae24"
+  },
+  "blacklist": [
+    "https://github.com/modichirag/GSM-VI"
+  ]
+}
