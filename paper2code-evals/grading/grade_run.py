@@ -20,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "benchmarks" / "frontier-evals" / "project" / "paperbench" / "data"
 IMAGE = "p2c-grader:1"
+GRADABLE = {"completed", "timed_out", "budget_exceeded"}
 JUDGE_MODEL = "gpt-5-mini-2025-08-07"  # PaperBench default o3-mini-2025-01-31 was retired by OpenAI; fixed replacement for all comparisons
 
 
@@ -41,10 +42,16 @@ def main() -> None:
     parser.add_argument("run_dir", type=Path)
     parser.add_argument("--full", action="store_true", help="grade every rubric node, not only Code Development")
     parser.add_argument("--judge", choices=["simple", "dummy"], default="simple")
+    parser.add_argument("--force", action="store_true", help="grade even if the run is invalid or has blacklist hits")
     args = parser.parse_args()
 
     run_dir = args.run_dir.resolve()
     meta = json.loads((run_dir / "metadata.json").read_text())
+    if not args.force:
+        if meta["status"] not in GRADABLE:
+            raise SystemExit(f"run status is {meta['status']!r}, not one of {sorted(GRADABLE)}; pass --force to grade anyway")
+        if meta.get("blacklist_hits"):
+            raise SystemExit(f"run has {len(meta['blacklist_hits'])} blacklist hits and should be thrown out; pass --force to grade anyway")
     variant = ("full" if args.full else "code_dev") + ("" if args.judge == "simple" else f"-{args.judge}")
     out_dir = ROOT / "grading" / "results" / meta["paper"] / meta["setup"] / meta["run_id"] / variant
     work = ROOT / "grading" / "work" / meta["run_id"] / "submission"
