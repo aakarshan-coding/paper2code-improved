@@ -41,6 +41,12 @@ python scripts/run_baseline.py bam --mode smoke-claude    # tiny real Claude cal
 python scripts/run_baseline.py bam                        # the 90-minute baseline
 ```
 
+To get several runs per paper, use the batch runner. It runs one at a time, takes turns between papers, and skips runs already in `runs/index.jsonl`, so you can stop it and start it again later. It stops after two failed or invalid runs in a row.
+
+```
+python scripts/run_batch.py bam sequential-neural-score-estimation all-in-one --runs-per-paper 3
+```
+
 Each run folder contains:
 
 - `trace.jsonl`: Claude Code's full stream-json output, written line by line as it arrives.
