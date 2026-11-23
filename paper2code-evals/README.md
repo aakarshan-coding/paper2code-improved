@@ -18,7 +18,7 @@ Runs the plain-Claude baseline on PaperBench papers in a sealed Docker container
 ## One-time setup
 
 1. Create an Anthropic API key in a **dedicated Console workspace** and set a monthly spend limit on that workspace. This is the only hard dollar cap. Claude Code's `--max-budget-usd` is its own estimate, checked between turns, so one long turn can go past it.
-2. Copy `.env.example` to `.env` and fill in `ANTHROPIC_API_KEY`.
+2. Copy `.env.example` to `.env` and fill in `ANTHROPIC_API_KEY`. Or, to use a Claude subscription instead of API credit, fill in `CLAUDE_CODE_OAUTH_TOKEN` from `claude setup-token`. Subscription runs count against the plan's usage limits and have no dollar cap, so `--max-budget-usd` only shapes how long the agent keeps going.
 3. Build the images:
 
    ```
@@ -64,7 +64,7 @@ Run statuses are `completed`, `timed_out`, `budget_exceeded`, `error`, `runner_c
 
 - The container runs as a non-root user with no sudo, all Linux capabilities dropped, and no Docker socket.
 - Only three folders are mounted: the task folder (read-only), the run's `submission/`, and the run's `claude_home/`. No host drive, home folder, or rubric is visible.
-- Only `ANTHROPIC_API_KEY` or `CLAUDE_CODE_OAUTH_TOKEN` is passed in. The agent can read that key, so use the dedicated, capped workspace key from setup step 1.
+- Only `ANTHROPIC_API_KEY` or `CLAUDE_CODE_OAUTH_TOKEN` is passed in. The agent can read it, so use the dedicated, capped workspace key from setup step 1, or a subscription token you can revoke.
 - Claude Code runs with an explicit tool allow-list (`--allowedTools`), not with permission checks turned off.
 - Internet stays on, because the agent needs the API, `pip`, and web search.
 - The time limit is enforced twice. The runner kills the container at 90 minutes, and a `timeout` inside the container ends it 60 seconds later if the runner has died.
