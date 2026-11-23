@@ -5,7 +5,7 @@ reduced to its committed files (PaperBench runs `git clean -fd` before grading),
 from the copy. The grader container, not the agent container, is the only place the rubric
 and OPENAI_API_KEY exist.
 
-    python grading/grade_run.py runs/paperbench/bam/baseline/<run_id>                 # Code-Dev, o3-mini judge
+    python grading/grade_run.py runs/paperbench/bam/baseline/<run_id>                 # Code-Dev, gpt-5-mini judge
     python grading/grade_run.py runs/paperbench/bam/baseline/<run_id> --full          # every rubric node
     python grading/grade_run.py runs/paperbench/bam/baseline/<run_id> --judge dummy   # free plumbing test
 """
