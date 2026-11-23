@@ -86,6 +86,8 @@ python grading/grade_run.py runs/paperbench/bam/baseline/<run_id> --judge dummy 
 
 This uses PaperBench's `run_judge.py` with judge `gpt-5-mini-2025-08-07` at high reasoning effort (PaperBench's default, `o3-mini-2025-01-31`, has been retired by OpenAI) and the unchanged rubric. It needs `OPENAI_API_KEY` in your environment. Scores go to `grading/results/`.
 
+The grader refuses a run whose status is not `completed`, `timed_out`, or `budget_exceeded`, or that has blacklist hits, since those runs are thrown out anyway. `--force` overrides this. If any rubric item fails to grade, no score is recorded.
+
 - **Code-Dev** (the default) checks only whether the code implements what the paper describes. It needs no GPU, so it fits this machine.
 - **Full PaperBench** also runs `reproduce.sh` and checks the results. That needs an NVIDIA GPU host (PaperBench uses an A10) with the NVIDIA container toolkit, plus PaperBench's reproduction pipeline. This machine has no NVIDIA GPU, so full grading needs a cloud GPU box.
 
