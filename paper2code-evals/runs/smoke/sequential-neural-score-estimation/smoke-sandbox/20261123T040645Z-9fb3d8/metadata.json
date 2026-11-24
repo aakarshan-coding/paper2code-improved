@@ -1,0 +1,204 @@
+{
+  "run_id": "20261123T040645Z-9fb3d8",
+  "mode": "smoke-sandbox",
+  "setup": "baseline",
+  "benchmark": "paperbench",
+  "paper": "sequential-neural-score-estimation",
+  "status": "passed",
+  "start_utc": "2026-11-23T04:06:45+00:00",
+  "end_utc": "2026-11-23T04:08:46+00:00",
+  "runtime_s": 120.4,
+  "timeout_s": 120,
+  "max_budget_usd": 0,
+  "model_requested": "claude-opus-5-5",
+  "claude_code_version_image": "2.1.322",
+  "image": "p2c-agent:1",
+  "image_id": "sha256:4a127c953f6b9aa99a8e0a25442ec46656901c7ea83c1632106e7029df092032",
+  "prompt_sha256": "42b1e79253773f8a121d52aee95e6e43c73dbc76f9b1ab7114b8a5ff7e7136bf",
+  "task_manifest_sha256": "9c1b3d8a1dc56ef0b42d3042bcac438b075d95c7b1f3d2e9a5adcebc00f3aee4",
+  "docker_command": [
+    "docker",
+    "run",
+    "--rm",
+    "-i",
+    "--init",
+    "--name",
+    "p2c-20261123t040645z-9fb3d8",
+    "--cpus",
+    "6",
+    "--memory",
+    "12g",
+    "--pids-limit",
+    "4096",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--mount",
+    "type=bind,source=C:\\mksProgram\\kanha-projects\\paper2code-improved\\paper2code-evals\\tasks\\sequential-neural-score-estimation\\paper,target=/home/paper,readonly",
+    "--mount",
+    "type=bind,source=C:\\mksProgram\\kanha-projects\\paper2code-improved\\paper2code-evals\\runs\\smoke\\sequential-neural-score-estimation\\smoke-sandbox\\20261123T040645Z-9fb3d8\\submission,target=/home/submission",
+    "--mount",
+    "type=bind,source=C:\\mksProgram\\kanha-projects\\paper2code-improved\\paper2code-evals\\runs\\smoke\\sequential-neural-score-estimation\\smoke-sandbox\\20261123T040645Z-9fb3d8\\claude_home,target=/home/agent/.claude",
+    "-e",
+    "GIT_CONFIG_COUNT=3",
+    "-e",
+    "GIT_CONFIG_KEY_0=url.https://blocked.invalid/.insteadOf",
+    "-e",
+    "GIT_CONFIG_VALUE_0=https://github.com/jacksimons15327/snpse_icml",
+    "-e",
+    "GIT_CONFIG_KEY_1=url.https://blocked.invalid/.insteadOf",
+    "-e",
+    "GIT_CONFIG_VALUE_1=https://github.com/jacksimons15327/snpse_icml",
+    "-e",
+    "GIT_CONFIG_KEY_2=url.https://blocked.invalid/.insteadOf",
+    "-e",
+    "GIT_CONFIG_VALUE_2=git@github.com:jacksimons15327/snpse_icml",
+    "-e",
+    "EXPECTED_CLAUDE_VERSION=2.1.322",
+    "-e",
+    "BLACKLIST_PROBE_URL=https://github.com/jacksimons15327/snpse_icml",
+    "-e",
+    "CLAUDE_CODE_OAUTH_TOKEN",
+    "p2c-agent:1",
+    "timeout",
+    "--kill-after=30",
+    "180",
+    "bash",
+    "/opt/checks/sandbox_check.sh"
+  ],
+  "auth_vars_passed": [
+    "CLAUDE_CODE_OAUTH_TOKEN"
+  ],
+  "host": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.3",
+    "docker": "27.4.0"
+  },
+  "cost_note": "total_cost_usd is Claude Code's client-side estimate; --max-budget-usd is a soft cap checked between turns.",
+  "container_exit_code": 137,
+  "timed_out": true,
+  "runner_error": null,
+  "host_sleep_gaps": [],
+  "agent_status": "passed",
+  "trace": {
+    "events": 15,
+    "unparseable_lines": 0,
+    "session_id": null,
+    "model_reported": null,
+    "claude_code_version_reported": null,
+    "tools_available": null,
+    "result_event": null,
+    "tokens_summed_from_messages": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_call_counts": {},
+    "tool_errors": 0,
+    "blacklist_hits": [],
+    "sandbox_checks": [
+      {
+        "type": "sandbox_check",
+        "check": "not_root",
+        "ok": true,
+        "detail": "uid=1000"
+      },
+      {
+        "type": "sandbox_check",
+        "check": "no_sudo",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "paper_visible",
+        "ok": true,
+        "detail": "addendum.md assets blacklist.txt paper.md paper.pdf "
+      },
+      {
+        "type": "sandbox_check",
+        "check": "paper_readonly",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "submission_writable",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "no_grading_files",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "only_expected_mounts",
+        "ok": true,
+        "detail": "/home/agent/.claude /home/paper /home/submission "
+      },
+      {
+        "type": "sandbox_check",
+        "check": "no_host_drive",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "no_extra_secrets",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "pip_install",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "normal_clone_works",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "blacklisted_clone_blocked",
+        "ok": true,
+        "detail": "https://github.com/jacksimons15327/snpse_icml"
+      },
+      {
+        "type": "sandbox_check",
+        "check": "claude_version",
+        "ok": true,
+        "detail": "2.1.322 (Claude Code)"
+      },
+      {
+        "type": "sandbox_check",
+        "check": "docker_socket_absent",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "type": "sandbox_check",
+        "check": "waiting_for_timeout",
+        "ok": true,
+        "detail": ""
+      }
+    ]
+  },
+  "submission": {
+    "file_count": 0,
+    "total_bytes": 0,
+    "has_reproduce_sh": false,
+    "has_readme": false,
+    "has_results_md": false,
+    "is_git_repo": false,
+    "git_commits": null,
+    "git_untracked_or_modified": null
+  }
+}
