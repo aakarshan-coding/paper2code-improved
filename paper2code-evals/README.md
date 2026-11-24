@@ -60,6 +60,8 @@ Run statuses are `completed`, `timed_out`, `budget_exceeded`, `error`, `runner_c
 
 **Keep the laptop awake.** If Windows sleeps, the container freezes, and when it wakes the agent sees its clock jump forward and stops early. The runner asks Windows not to sleep while a run is going, but closing the lid or pressing the power button still forces sleep. Keep it plugged in with the lid open. If the runner sees a clock gap of more than 60 seconds, it marks the run `invalid_host_slept` and lists the gaps under `host_sleep_gaps`. The agent's own outcome is kept in `agent_status`.
 
+During a batch, a sleep costs only the run in progress. When the laptop wakes, the runner marks that run `invalid_host_slept`, and the batch starts a replacement. The recorded runtime includes the time asleep.
+
 ## How the sandbox works
 
 - The container runs as a non-root user with no sudo, all Linux capabilities dropped, and no Docker socket.
