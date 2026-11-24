@@ -1,0 +1,29 @@
+{
+  "setup": "baseline",
+  "benchmark": "paperbench",
+  "prompt_file": "baseline_prompt.md",
+  "model": "claude-opus-5-5",
+  "image": "p2c-agent:1",
+  "timeout_minutes": 90,
+  "max_budget_usd": 8,
+  "allowed_tools": [
+    "Bash",
+    "Read",
+    "Write",
+    "Edit",
+    "Glob",
+    "Grep",
+    "WebFetch",
+    "WebSearch",
+    "TodoWrite",
+    "NotebookEdit"
+  ],
+  "resources": {
+    "cpus": "6",
+    "memory": "12g",
+    "pids_limit": 4096
+  },
+  "claude_code_version": "2.1.322",
+  "mode": "baseline",
+  "timeout_s": 5400
+}
